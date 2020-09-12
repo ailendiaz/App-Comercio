@@ -3,10 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dominio;
+using System.Data.SqlClient;
+
 
 namespace Negocio
 {
-    class ArticulosNegocio
+    public class ArticulosNegocio
     {
+        public List<Articulos>listar ()
+        {
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            SqlDataReader lector;
+            List<Articulos> lista = new List<Articulos>();
+
+            conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V, initian catalog= CATALOGO_DB,integrated Security= sspi";
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "Select ID, Nombre, Descripcion, ImagenUrl From ARTICULOS";
+            comando.Connection = conexion;
+
+            conexion.Open();
+            lector = comando.ExecuteReader();
+
+            while (lector.Read ())
+            {
+                Articulos aux = new Articulos ();
+                aux.Nombre = lector.GetString(1);
+                aux.Descripcion = lector.GetString(2);
+                aux.URLima= (string)lector["ImagenUrl"];
+
+                lista.Add(aux);
+
+            }
+
+            conexion.Close();
+            return lista;
+        }
+
     }
 }
