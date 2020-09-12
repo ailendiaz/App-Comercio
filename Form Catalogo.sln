@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp", "WindowsF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{298D01CC-2729-404C-9073-D708C9A4CF94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{C08836DF-E689-4C65-B070-D0A32897F407}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{298D01CC-2729-404C-9073-D708C9A4CF94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{298D01CC-2729-404C-9073-D708C9A4CF94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{298D01CC-2729-404C-9073-D708C9A4CF94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C08836DF-E689-4C65-B070-D0A32897F407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C08836DF-E689-4C65-B070-D0A32897F407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C08836DF-E689-4C65-B070-D0A32897F407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C08836DF-E689-4C65-B070-D0A32897F407}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
