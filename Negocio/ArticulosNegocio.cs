@@ -18,7 +18,7 @@ namespace Negocio
             SqlDataReader lector;
             List<Articulos> lista = new List<Articulos>();
 
-            conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V, initian catalog= CATALOGO_DB,integrated Security= sspi";
+            conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = "Select ID, Nombre, Descripcion, ImagenUrl From ARTICULOS";
             comando.Connection = conexion;
@@ -31,7 +31,7 @@ namespace Negocio
                 Articulos aux = new Articulos ();
                 aux.Nombre = lector.GetString(1);
                 aux.Descripcion = lector.GetString(2);
-                aux.URLima= (string)lector["ImagenUrl"];
+                aux.ImagenUrl= (string)lector["ImagenUrl"];
 
                 lista.Add(aux);
 
