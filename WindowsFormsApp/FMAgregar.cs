@@ -39,6 +39,10 @@ namespace WindowsFormsApp
             MarcaNegocio marcaNegocio = new MarcaNegocio();
 
             cbmarca.DataSource = marcaNegocio.listar();
+
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            cbcategoria.DataSource = categoriaNegocio.listar();
+
         }
     }
 }

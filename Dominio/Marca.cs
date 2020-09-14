@@ -16,5 +16,10 @@ namespace Dominio
         {
             this.descripcion = descripcion;
         }
+
+        public override string ToString()
+        {
+            return descripcion;
+        }
     }
 }

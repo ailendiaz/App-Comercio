@@ -17,5 +17,10 @@ namespace Dominio
         }
         public Categoria() { }
 
+        public override string ToString()
+        {
+            return descripcion;
+        }
+
     }
 }
