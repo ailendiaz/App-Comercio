@@ -23,7 +23,7 @@ namespace Negocio
             //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Select ID, Nombre, Descripcion, ImagenUrl From ARTICULOS";
+            comando.CommandText = "Select ID,Codigo, Nombre, Descripcion, ImagenUrl, Precio From ARTICULOS";
             comando.Connection = conexion;
 
             conexion.Open();
@@ -32,9 +32,11 @@ namespace Negocio
             while (lector.Read ())
             {
                 Articulos aux = new Articulos ();
-                aux.Nombre = lector.GetString(1);
-                aux.Descripcion = lector.GetString(2);
+                aux.Codigo = lector.GetString(1);
+                aux.Nombre = lector.GetString(2);
+                aux.Descripcion = lector.GetString(3);
                 aux.ImagenUrl= (string)lector["ImagenUrl"];
+                aux.Precio = lector.GetSqlMoney(5);
 
                 lista.Add(aux);
 
@@ -53,7 +55,7 @@ namespace Negocio
             //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Insert Into ARTICULOS (Nombre,Descripcion,ImagenUrl) values ('" + nuevo.Nombre + "','" + nuevo.Descripcion + "',' ')";
+            comando.CommandText = "Insert Into ARTICULOS (Codigo,Nombre,Descripcion,ImagenUrl,Precio) values ('" + nuevo.Codigo + "','" + nuevo.Nombre + "','" + nuevo.Descripcion + "',' ','" + nuevo.Precio + "')";
             comando.Connection = conexion;
 
             conexion.Open();
