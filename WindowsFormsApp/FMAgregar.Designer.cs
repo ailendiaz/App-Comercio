@@ -202,6 +202,7 @@
             this.Controls.Add(this.lbCodigoArt);
             this.Name = "FMAgregar";
             this.Text = "FMAgregar";
+            this.Load += new System.EventHandler(this.FMAgregar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

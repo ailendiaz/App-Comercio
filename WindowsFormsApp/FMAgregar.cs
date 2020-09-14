@@ -33,5 +33,12 @@ namespace WindowsFormsApp
             Close();
 
         }
+
+        private void FMAgregar_Load(object sender, EventArgs e)
+        {
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+
+            cbmarca.DataSource = marcaNegocio.listar();
+        }
     }
 }
