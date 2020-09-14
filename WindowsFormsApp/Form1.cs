@@ -22,8 +22,8 @@ namespace WindowsFormsApp
         private void Form1_Load(object sender, EventArgs e)
         {
             ArticulosNegocio Negocio = new ArticulosNegocio();
-            //DGVLista.DataSource = Negocio.listar();
-            //DGVLista.Columns[2].Visible = false;
+            DGVLista.DataSource = Negocio.listar();
+            DGVLista.Columns[2].Visible = false;
             //Al habilitar las lineas de codigo comentadas pincha
         }
 
