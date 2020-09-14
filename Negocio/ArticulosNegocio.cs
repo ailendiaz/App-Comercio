@@ -23,7 +23,7 @@ namespace Negocio
             //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Select ID,Codigo, Nombre, Descripcion, ImagenUrl, Precio From ARTICULOS";
+            comando.CommandText = "Select A.ID,A.Codigo,A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion Marcas From ARTICULOS A, MARCAS M where A.IdMarca= M.Id";
             comando.Connection = conexion;
 
             conexion.Open();
@@ -37,6 +37,9 @@ namespace Negocio
                 aux.Descripcion = lector.GetString(3);
                 aux.ImagenUrl= (string)lector["ImagenUrl"];
                 aux.Precio = lector.GetSqlMoney(5);
+
+                aux.marca = new Marca();
+                aux.marca.descripcion = (string)lector["Marcas"];
 
                 lista.Add(aux);
 
