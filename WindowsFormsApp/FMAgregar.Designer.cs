@@ -35,11 +35,11 @@
             this.lbCategoria = new System.Windows.Forms.Label();
             this.lbimagen = new System.Windows.Forms.Label();
             this.lbprecio = new System.Windows.Forms.Label();
-            this.tbcodigo = new System.Windows.Forms.TextBox();
-            this.tbnombre = new System.Windows.Forms.TextBox();
-            this.tbdescripcion = new System.Windows.Forms.TextBox();
-            this.tbimagen = new System.Windows.Forms.TextBox();
-            this.tbprecio = new System.Windows.Forms.TextBox();
+            this.txtcodigo = new System.Windows.Forms.TextBox();
+            this.txtnombre = new System.Windows.Forms.TextBox();
+            this.txtdescripcion = new System.Windows.Forms.TextBox();
+            this.txtimagen = new System.Windows.Forms.TextBox();
+            this.txtprecio = new System.Windows.Forms.TextBox();
             this.cbmarca = new System.Windows.Forms.ComboBox();
             this.cbcategoria = new System.Windows.Forms.ComboBox();
             this.btaceptar = new System.Windows.Forms.Button();
@@ -54,7 +54,6 @@
             this.lbCodigoArt.Size = new System.Drawing.Size(63, 20);
             this.lbCodigoArt.TabIndex = 0;
             this.lbCodigoArt.Text = "Codigo:";
-            this.lbCodigoArt.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbNombre
             // 
@@ -82,7 +81,6 @@
             this.lbMarca.Size = new System.Drawing.Size(57, 20);
             this.lbMarca.TabIndex = 3;
             this.lbMarca.Text = "Marca:";
-            this.lbMarca.Click += new System.EventHandler(this.lbMarca_Click);
             // 
             // lbCategoria
             // 
@@ -110,43 +108,41 @@
             this.lbprecio.Size = new System.Drawing.Size(57, 20);
             this.lbprecio.TabIndex = 6;
             this.lbprecio.Text = "Precio:";
-            this.lbprecio.Click += new System.EventHandler(this.lbprecio_Click);
             // 
-            // tbcodigo
+            // txtcodigo
             // 
-            this.tbcodigo.Location = new System.Drawing.Point(246, 50);
-            this.tbcodigo.Name = "tbcodigo";
-            this.tbcodigo.Size = new System.Drawing.Size(179, 26);
-            this.tbcodigo.TabIndex = 7;
+            this.txtcodigo.Location = new System.Drawing.Point(246, 50);
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Size = new System.Drawing.Size(179, 26);
+            this.txtcodigo.TabIndex = 7;
             // 
-            // tbnombre
+            // txtnombre
             // 
-            this.tbnombre.Location = new System.Drawing.Point(246, 93);
-            this.tbnombre.Name = "tbnombre";
-            this.tbnombre.Size = new System.Drawing.Size(179, 26);
-            this.tbnombre.TabIndex = 8;
+            this.txtnombre.Location = new System.Drawing.Point(246, 93);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(179, 26);
+            this.txtnombre.TabIndex = 8;
             // 
-            // tbdescripcion
+            // txtdescripcion
             // 
-            this.tbdescripcion.Location = new System.Drawing.Point(246, 135);
-            this.tbdescripcion.Name = "tbdescripcion";
-            this.tbdescripcion.Size = new System.Drawing.Size(179, 26);
-            this.tbdescripcion.TabIndex = 9;
+            this.txtdescripcion.Location = new System.Drawing.Point(246, 135);
+            this.txtdescripcion.Name = "txtdescripcion";
+            this.txtdescripcion.Size = new System.Drawing.Size(179, 26);
+            this.txtdescripcion.TabIndex = 9;
             // 
-            // tbimagen
+            // txtimagen
             // 
-            this.tbimagen.Location = new System.Drawing.Point(246, 280);
-            this.tbimagen.Name = "tbimagen";
-            this.tbimagen.Size = new System.Drawing.Size(179, 26);
-            this.tbimagen.TabIndex = 10;
-            this.tbimagen.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtimagen.Location = new System.Drawing.Point(246, 280);
+            this.txtimagen.Name = "txtimagen";
+            this.txtimagen.Size = new System.Drawing.Size(179, 26);
+            this.txtimagen.TabIndex = 10;
             // 
-            // tbprecio
+            // txtprecio
             // 
-            this.tbprecio.Location = new System.Drawing.Point(246, 341);
-            this.tbprecio.Name = "tbprecio";
-            this.tbprecio.Size = new System.Drawing.Size(179, 26);
-            this.tbprecio.TabIndex = 11;
+            this.txtprecio.Location = new System.Drawing.Point(246, 341);
+            this.txtprecio.Name = "txtprecio";
+            this.txtprecio.Size = new System.Drawing.Size(179, 26);
+            this.txtprecio.TabIndex = 11;
             // 
             // cbmarca
             // 
@@ -172,6 +168,7 @@
             this.btaceptar.TabIndex = 14;
             this.btaceptar.Text = "Aceptar";
             this.btaceptar.UseVisualStyleBackColor = true;
+            this.btaceptar.Click += new System.EventHandler(this.btaceptar_Click);
             // 
             // btcancelar
             // 
@@ -191,11 +188,11 @@
             this.Controls.Add(this.btaceptar);
             this.Controls.Add(this.cbcategoria);
             this.Controls.Add(this.cbmarca);
-            this.Controls.Add(this.tbprecio);
-            this.Controls.Add(this.tbimagen);
-            this.Controls.Add(this.tbdescripcion);
-            this.Controls.Add(this.tbnombre);
-            this.Controls.Add(this.tbcodigo);
+            this.Controls.Add(this.txtprecio);
+            this.Controls.Add(this.txtimagen);
+            this.Controls.Add(this.txtdescripcion);
+            this.Controls.Add(this.txtnombre);
+            this.Controls.Add(this.txtcodigo);
             this.Controls.Add(this.lbprecio);
             this.Controls.Add(this.lbimagen);
             this.Controls.Add(this.lbCategoria);
@@ -219,11 +216,11 @@
         private System.Windows.Forms.Label lbCategoria;
         private System.Windows.Forms.Label lbimagen;
         private System.Windows.Forms.Label lbprecio;
-        private System.Windows.Forms.TextBox tbcodigo;
-        private System.Windows.Forms.TextBox tbnombre;
-        private System.Windows.Forms.TextBox tbdescripcion;
-        private System.Windows.Forms.TextBox tbimagen;
-        private System.Windows.Forms.TextBox tbprecio;
+        private System.Windows.Forms.TextBox txtcodigo;
+        private System.Windows.Forms.TextBox txtnombre;
+        private System.Windows.Forms.TextBox txtdescripcion;
+        private System.Windows.Forms.TextBox txtimagen;
+        private System.Windows.Forms.TextBox txtprecio;
         private System.Windows.Forms.ComboBox cbmarca;
         private System.Windows.Forms.ComboBox cbcategoria;
         private System.Windows.Forms.Button btaceptar;

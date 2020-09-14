@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace WindowsFormsApp
 {
@@ -17,23 +19,15 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btaceptar_Click(object sender, EventArgs e)
         {
+            Articulos nuevo = new Articulos();
+            ArticulosNegocio Negocio = new ArticulosNegocio();
 
-        }
+            nuevo.Nombre = txtnombre.Text;
+            nuevo.Descripcion = txtdescripcion.Text;
 
-        private void lbMarca_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbprecio_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
+            Negocio.Agregar(nuevo);
 
         }
     }

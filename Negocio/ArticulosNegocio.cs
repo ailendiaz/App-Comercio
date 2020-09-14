@@ -44,5 +44,9 @@ namespace Negocio
             return lista;
         }
 
+        public void Agregar(Articulos nuevo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
