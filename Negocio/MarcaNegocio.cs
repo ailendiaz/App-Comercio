@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Dominio;
 using System.Data.SqlClient;
 using System.Data.Common;
 

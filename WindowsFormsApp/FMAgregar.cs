@@ -29,6 +29,9 @@ namespace WindowsFormsApp
 
             Negocio.Agregar(nuevo);
 
+            MessageBox.Show("Articulo agregado exitosamente!");
+            Close();
+
         }
     }
 }
