@@ -23,5 +23,11 @@ namespace WindowsFormsApp
             listado.ShowDialog();
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FMAgregar agregar = new FMAgregar();
+            agregar.ShowDialog(); 
+        }
     }
 }

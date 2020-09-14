@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FMAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FMAgregar.Designer.cs">
+      <DependentUpon>FMAgregar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListadoDeArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FMAgregar.resx">
+      <DependentUpon>FMAgregar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListadoDeArticulos.resx">
       <DependentUpon>frmListadoDeArticulos.cs</DependentUpon>
     </EmbeddedResource>
