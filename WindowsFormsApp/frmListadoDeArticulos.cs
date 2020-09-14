@@ -12,9 +12,9 @@ using Dominio;
 
 namespace WindowsFormsApp
 {
-    public partial class Form1 : Form
+    public partial class frmListado : Form
     {
-        public Form1()
+        public frmListado()
         {
             InitializeComponent();
         }

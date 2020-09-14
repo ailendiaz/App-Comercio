@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp
 {
-    partial class Form1
+    partial class frmListado
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             // 
             this.DGVLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVLista.Location = new System.Drawing.Point(11, 21);
-            this.DGVLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DGVLista.Margin = new System.Windows.Forms.Padding(2);
             this.DGVLista.Name = "DGVLista";
             this.DGVLista.RowHeadersWidth = 62;
             this.DGVLista.RowTemplate.Height = 28;
@@ -51,23 +51,23 @@
             // pbarticulo
             // 
             this.pbarticulo.Location = new System.Drawing.Point(518, 21);
-            this.pbarticulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbarticulo.Margin = new System.Windows.Forms.Padding(2);
             this.pbarticulo.Name = "pbarticulo";
             this.pbarticulo.Size = new System.Drawing.Size(303, 240);
             this.pbarticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbarticulo.TabIndex = 1;
             this.pbarticulo.TabStop = false;
             // 
-            // Form1
+            // frmListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 344);
             this.Controls.Add(this.pbarticulo);
             this.Controls.Add(this.DGVLista);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmListado";
+            this.Text = "Listado de Articulos";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbarticulo)).EndInit();
