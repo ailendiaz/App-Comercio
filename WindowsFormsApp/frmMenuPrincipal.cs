@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 
 namespace WindowsFormsApp
 {
@@ -28,6 +29,25 @@ namespace WindowsFormsApp
         {
             FMAgregar agregar = new FMAgregar();
             agregar.ShowDialog(); 
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            frmModificar modificar= new frmModificar();
+            modificar.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            frmEliminar eliminar = new frmEliminar();
+            eliminar.ShowDialog();
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            frmBuscar buscar = new frmBuscar();
+            buscar.ShowDialog();
         }
     }
 }

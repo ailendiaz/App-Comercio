@@ -23,13 +23,8 @@ namespace WindowsFormsApp
         {
             ArticulosNegocio Negocio = new ArticulosNegocio();
             DGVLista.DataSource = Negocio.listar();
-            DGVLista.Columns[2].Visible = false;
+            DGVLista.Columns[3].Visible = false;
             //Al habilitar las lineas de codigo comentadas pincha
-        }
-
-        private void DGVLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void DGVLista_SelectionChanged(object sender, EventArgs e)
@@ -46,6 +41,12 @@ namespace WindowsFormsApp
            
             }
             
+        }
+
+        private void DGVLista_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmBuscar buscar = new frmBuscar();
+            buscar.ShowDialog();
         }
     }
 }

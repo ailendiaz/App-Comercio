@@ -42,10 +42,9 @@
             this.DGVLista.Name = "DGVLista";
             this.DGVLista.RowHeadersWidth = 62;
             this.DGVLista.RowTemplate.Height = 28;
-            this.DGVLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.DGVLista.Size = new System.Drawing.Size(471, 240);
             this.DGVLista.TabIndex = 0;
-            this.DGVLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLista_CellContentClick);
+            this.DGVLista.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVLista_CellContentDoubleClick);
             this.DGVLista.SelectionChanged += new System.EventHandler(this.DGVLista_SelectionChanged);
             // 
             // pbarticulo
