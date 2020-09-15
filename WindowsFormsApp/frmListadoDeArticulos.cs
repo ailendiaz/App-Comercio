@@ -24,7 +24,7 @@ namespace WindowsFormsApp
             ArticulosNegocio Negocio = new ArticulosNegocio();
             DGVLista.DataSource = Negocio.listar();
             DGVLista.Columns[3].Visible = false;
-            //Al habilitar las lineas de codigo comentadas pincha
+            
         }
 
         private void DGVLista_SelectionChanged(object sender, EventArgs e)
