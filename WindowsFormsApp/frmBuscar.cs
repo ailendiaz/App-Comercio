@@ -23,6 +23,7 @@ namespace WindowsFormsApp
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            SqlDataReader lector;
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
 
@@ -30,15 +31,30 @@ namespace WindowsFormsApp
             //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Select * from ARTICULOS where ID="+txtBuscar.Text;
+            comando.CommandText = "Select * from ARTICULOS where Codigo=@Codigo";
+            comando.Parameters.AddWithValue("@Codigo", Convert.ToString(txtBuscar.Text));
+            // TUVE QUE CASTEAR PARA QUE LEA EL CODIGO
+            
             comando.Connection = conexion;
-
             conexion.Open();
-            comando.ExecuteNonQuery();
+            
+             lector= comando.ExecuteReader();
 
-            ArticulosNegocio Negocio = new ArticulosNegocio();
-            dgvBuscar.DataSource = Negocio.listar();
-            //dgvBuscar.Columns[1].Visible = false;
+            if (lector.Read())
+            {
+                Articulos aux = new Articulos();
+
+                if (aux.Codigo == lector.GetString(1))
+                    dgvBuscar.DataSource = aux.Codigo;
+                    
+
+            }
+           
+           
+            conexion.Close();
+
+
+
 
         }
     }
