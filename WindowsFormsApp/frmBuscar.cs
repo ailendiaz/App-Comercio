@@ -29,17 +29,22 @@ namespace WindowsFormsApp
 
             ArticulosNegocio auxNegocio = new ArticulosNegocio();
             Articulos auxArticulo = new Articulos();
-            
+
 
             auxArticulo.marca = new Marca();
             auxArticulo.categoria = new Categoria();
 
             auxArticulo = auxNegocio.buscar(txtBuscar.Text);
+
+
             List<Articulos> lista = new List<Articulos>();
             lista.Add(auxArticulo);
-            
+
             dgvBuscar.DataSource = lista;
+            
+            
             //txtImporte.Text = (String)auxArticulo.Precio;
+
 
         }
 
