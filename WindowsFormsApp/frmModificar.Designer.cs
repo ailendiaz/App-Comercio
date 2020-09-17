@@ -35,7 +35,7 @@
             this.lbimagen = new System.Windows.Forms.Label();
             this.lbcategoria = new System.Windows.Forms.Label();
             this.lbprecio = new System.Windows.Forms.Label();
-            this.btactualizar = new System.Windows.Forms.Button();
+            this.btaceptar = new System.Windows.Forms.Button();
             this.btcancelar = new System.Windows.Forms.Button();
             this.txtcodigo = new System.Windows.Forms.TextBox();
             this.txtnombre = new System.Windows.Forms.TextBox();
@@ -109,15 +109,15 @@
             this.lbprecio.TabIndex = 6;
             this.lbprecio.Text = "Precio:";
             // 
-            // btactualizar
+            // btaceptar
             // 
-            this.btactualizar.Location = new System.Drawing.Point(100, 445);
-            this.btactualizar.Name = "btactualizar";
-            this.btactualizar.Size = new System.Drawing.Size(97, 31);
-            this.btactualizar.TabIndex = 7;
-            this.btactualizar.Text = "Aceptar";
-            this.btactualizar.UseVisualStyleBackColor = true;
-            //this.btactualizar.Click += new System.EventHandler(this.btactualizar_Click); DESCOMENTAR
+            this.btaceptar.Location = new System.Drawing.Point(100, 445);
+            this.btaceptar.Name = "btaceptar";
+            this.btaceptar.Size = new System.Drawing.Size(97, 31);
+            this.btaceptar.TabIndex = 7;
+            this.btaceptar.Text = "Aceptar";
+            this.btaceptar.UseVisualStyleBackColor = true;
+            this.btaceptar.Click += new System.EventHandler(this.btaceptar_Click);
             // 
             // btcancelar
             // 
@@ -192,7 +192,7 @@
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.txtcodigo);
             this.Controls.Add(this.btcancelar);
-            this.Controls.Add(this.btactualizar);
+            this.Controls.Add(this.btaceptar);
             this.Controls.Add(this.lbprecio);
             this.Controls.Add(this.lbcategoria);
             this.Controls.Add(this.lbimagen);
@@ -217,7 +217,7 @@
         private System.Windows.Forms.Label lbimagen;
         private System.Windows.Forms.Label lbcategoria;
         private System.Windows.Forms.Label lbprecio;
-        private System.Windows.Forms.Button btactualizar;
+        private System.Windows.Forms.Button btaceptar;
         private System.Windows.Forms.Button btcancelar;
         private System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.TextBox txtnombre;

@@ -39,20 +39,14 @@ namespace WindowsFormsApp
 
             List<Articulos> lista = new List<Articulos>();
             lista.Add(auxArticulo);
-
+            articuloguardado = auxArticulo;
             dgvBuscar.DataSource = lista;
-            
-            
+
             //txtImporte.Text = (String)auxArticulo.Precio;
 
 
         }
 
-        private void btmodificar_Click(object sender, EventArgs e)
-        {
-            frmModificar modificar = new frmModificar();
-            modificar.ShowDialog();
-        }
 
         private void txtdetalle_click(object sender, EventArgs e)
         {
@@ -65,12 +59,10 @@ namespace WindowsFormsApp
 
             if (dgvBuscar.SelectedRows.Count ==1)
             {
+                string codigo = Convert.ToString(dgvBuscar.CurrentRow.Cells[1].Value);
+                articuloguardado = auxNegocio.buscar(codigo);
                 frmDetalle detalle = new frmDetalle();
                 detalle.ShowDialog();
-
-               string codigo = Convert.ToString (dgvBuscar.CurrentRow.Cells[1].Value);
-               articuloguardado = auxNegocio.buscar(codigo);
-
                 
             }
             else
@@ -79,6 +71,12 @@ namespace WindowsFormsApp
 
             }
 
+        }
+
+        private void btmodificar_Click(object sender, EventArgs e)
+        {
+            frmModificar modificar = new frmModificar();
+            modificar.ShowDialog();
         }
     }
 }

@@ -20,24 +20,36 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
-        
+        public Articulos articulomodificado { get; set; }
 
-        //private void btactualizar_Click(object sender, EventArgs e)
-        //{
-            
+        private void btaceptar_Click(object sender, EventArgs e)
+        {
 
-         // ArticulosNegocio auxNegocio = new ArticulosNegocio();
-         //  Articulos auxArticulo = new Articulos();
+                frmBuscar buscar = new frmBuscar();
+                ArticulosNegocio auxNegocio = new ArticulosNegocio();
+                Articulos auxArticulo = new Articulos();
 
-          // auxArticulo.marca = new Marca();
-          // auxArticulo.categoria = new Categoria();
-           
-          //auxArticulo= auxNegocio.Modificar(auxArticulo);// aca habria que pasarle el txtbuscar.text del form buscar
-           // para que modifique ese pero no se como. La funcion buscar recibe una string del txt pero desde el otro form no se puede acceder
-          // List<Articulos> lista = new List<Articulos>();
-          //lista.Add(auxArticulo);
+                auxArticulo.marca = new Marca();
+                auxArticulo.categoria = new Categoria();
+                articulomodificado = buscar.articuloguardado;
 
-            //dgvBuscar.DataSource = lista;
+
+                auxArticulo.Nombre = txtnombre.Text;
+                auxArticulo.Descripcion = txtdescripcion.Text;
+                auxArticulo.Codigo = articulomodificado.Codigo;
+
+            int resultado = ArticulosNegocio.modificar(auxArticulo);
+
+            if (resultado>0)
+            {
+                MessageBox.Show("Articulo Modificado exitosamente!");
+            }
+            else
+            {
+                MessageBox.Show("El articulo no pudo ser modificado!");
+            }
+
         }
     }
+}
 
