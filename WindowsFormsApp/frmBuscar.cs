@@ -21,7 +21,7 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
-       
+        public Articulos articuloguardado { get; set; }
 
         private void btnBuscar_Click(object sender, EventArgs e) // SI PONES UN DATO QUE NO EXISTE PINCHA. 
         {
@@ -54,6 +54,31 @@ namespace WindowsFormsApp
             modificar.ShowDialog();
         }
 
-        
+        private void txtdetalle_click(object sender, EventArgs e)
+        {
+
+            ArticulosNegocio auxNegocio = new ArticulosNegocio();
+            Articulos auxArticulo = new Articulos();
+
+
+            auxArticulo.marca = new Marca();
+            auxArticulo.categoria = new Categoria();
+
+            if (dgvBuscar.SelectedRows.Count ==1)
+            {
+
+                string codigo = Convert.ToString (dgvBuscar.CurrentRow.Cells[1].Value);
+                articuloguardado = auxNegocio.buscar(codigo);
+                //List<Articulos> lista = new List<Articulos>();
+                //lista.Add(auxArticulo);
+
+                //dgvBuscar.DataSource = lista;
+            }
+            else
+            {
+                MessageBox.Show("No selecciono ningun articulo!");
+
+            }
+        }
     }
 }

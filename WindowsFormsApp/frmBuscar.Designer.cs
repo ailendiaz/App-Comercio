@@ -33,6 +33,7 @@
             this.dgvBuscar = new System.Windows.Forms.DataGridView();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.btmodificar = new System.Windows.Forms.Button();
+            this.txtdetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,6 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(172, 35);
             this.txtBuscar.TabIndex = 1;
-            
             // 
             // dgvBuscar
             // 
@@ -82,7 +82,7 @@
             // 
             // btmodificar
             // 
-            this.btmodificar.Location = new System.Drawing.Point(77, 245);
+            this.btmodificar.Location = new System.Drawing.Point(77, 312);
             this.btmodificar.Name = "btmodificar";
             this.btmodificar.Size = new System.Drawing.Size(112, 33);
             this.btmodificar.TabIndex = 4;
@@ -90,11 +90,22 @@
             this.btmodificar.UseVisualStyleBackColor = true;
             this.btmodificar.Click += new System.EventHandler(this.btmodificar_Click);
             // 
+            // txtdetalle
+            // 
+            this.txtdetalle.Location = new System.Drawing.Point(77, 244);
+            this.txtdetalle.Name = "txtdetalle";
+            this.txtdetalle.Size = new System.Drawing.Size(112, 36);
+            this.txtdetalle.TabIndex = 5;
+            this.txtdetalle.Text = "Ver Detalle";
+            this.txtdetalle.UseVisualStyleBackColor = true;
+            this.txtdetalle.Click += new System.EventHandler(this.txtdetalle_click);
+            // 
             // frmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 390);
+            this.Controls.Add(this.txtdetalle);
             this.Controls.Add(this.btmodificar);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.dgvBuscar);
@@ -116,5 +127,6 @@
         private System.Windows.Forms.DataGridView dgvBuscar;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.Button btmodificar;
+        private System.Windows.Forms.Button txtdetalle;
     }
 }
