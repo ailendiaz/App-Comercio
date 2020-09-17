@@ -55,6 +55,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(172, 35);
             this.txtBuscar.TabIndex = 1;
+            
             // 
             // dgvBuscar
             // 

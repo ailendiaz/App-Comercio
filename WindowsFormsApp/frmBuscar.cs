@@ -21,6 +21,8 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
+       
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             //Elimine el codigo de prueba
@@ -46,5 +48,7 @@ namespace WindowsFormsApp
             frmModificar modificar = new frmModificar();
             modificar.ShowDialog();
         }
+
+        
     }
 }

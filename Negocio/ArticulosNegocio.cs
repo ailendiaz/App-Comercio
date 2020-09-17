@@ -99,8 +99,25 @@ namespace Negocio
 
             return aux;
         }
-        
-        
+
+        //public Articulos Modificar(Articulos nuevo) //string codigo//) aca recibiria el codigo
+        //{
+          //  SqlConnection conexion = new SqlConnection();
+          //  SqlCommand comando = new SqlCommand();
+            //SqlDataReader lector;
+
+            //comentamos y descomentamos para poder usar la base de datos local de cada uno
+            //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
+          //  conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
+          //  comando.CommandType = System.Data.CommandType.Text;
+          //  comando.CommandText = "Update ARTICULOS SET Codigo= '" + nuevo.Codigo + "',Nombre='" + nuevo.Nombre + "',Descrpcion= '" + nuevo.Descripcion + "',ImagenUrl='" + nuevo.ImagenUrl + "',Precio='" + nuevo.Precio + "', where Codigo='" + codigo + "'";
+
+          //  comando.Connection = conexion;
+
+          //  conexion.Open();
+          //  comando.ExecuteNonQuery();
+
+        //}
 
     }
 }

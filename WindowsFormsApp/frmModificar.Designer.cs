@@ -117,7 +117,7 @@
             this.btactualizar.TabIndex = 7;
             this.btactualizar.Text = "Aceptar";
             this.btactualizar.UseVisualStyleBackColor = true;
-            
+            //this.btactualizar.Click += new System.EventHandler(this.btactualizar_Click); DESCOMENTAR
             // 
             // btcancelar
             // 
