@@ -23,35 +23,7 @@ namespace WindowsFormsApp
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //SqlDataReader lector;
-            //SqlConnection conexion = new SqlConnection();
-            //SqlCommand comando = new SqlCommand();
-
-            ////comentamos y descomentamos para poder usar la base de datos local de cada uno
-            //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
-            ////conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
-            //comando.CommandType = System.Data.CommandType.Text;
-            //comando.CommandText = "Select * from ARTICULOS where Codigo=@Codigo";
-            //comando.Parameters.AddWithValue("@Codigo", Convert.ToString(txtBuscar.Text));
-            //// TUVE QUE CASTEAR PARA QUE LEA EL CODIGO
-
-            //comando.Connection = conexion;
-            //conexion.Open();
-
-            // lector= comando.ExecuteReader();
-
-            //if (lector.Read())
-            //{
-            //    Articulos aux = new Articulos();
-
-            //    if (aux.Codigo == lector.GetString(1))
-            //        dgvBuscar.DataSource = aux.Codigo;
-
-
-            //}
-
-
-            //conexion.Close();
+            //Elimine el codigo de prueba
 
             ArticulosNegocio auxNegocio = new ArticulosNegocio();
             Articulos auxArticulo = new Articulos();
@@ -67,8 +39,12 @@ namespace WindowsFormsApp
             dgvBuscar.DataSource = lista;
             //txtImporte.Text = (String)auxArticulo.Precio;
 
+        }
 
-
+        private void btmodificar_Click(object sender, EventArgs e)
+        {
+            frmModificar modificar = new frmModificar();
+            modificar.ShowDialog();
         }
     }
 }
