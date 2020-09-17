@@ -23,7 +23,7 @@ namespace WindowsFormsApp
 
        
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e) // SI PONES UN DATO QUE NO EXISTE PINCHA. 
         {
             //Elimine el codigo de prueba
 
