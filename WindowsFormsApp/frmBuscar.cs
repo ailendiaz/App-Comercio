@@ -34,13 +34,21 @@ namespace WindowsFormsApp
             auxArticulo.marca = new Marca();
             auxArticulo.categoria = new Categoria();
 
-            auxArticulo = auxNegocio.buscar(txtBuscar.Text);
+            if (auxNegocio.buscar(txtBuscar.Text))
+            {
+                auxArticulo = auxNegocio.cargar(txtBuscar.Text);
+                List<Articulos> lista = new List<Articulos>();
+                lista.Add(auxArticulo);
+                articuloguardado = auxArticulo;
+                dgvBuscar.DataSource = lista;
+            }
+            else
+            {
+                MessageBox.Show("El articulo codigo: "+txtBuscar+" no se encuentra en el catalogo.");
+            }
 
 
-            List<Articulos> lista = new List<Articulos>();
-            lista.Add(auxArticulo);
-            articuloguardado = auxArticulo;
-            dgvBuscar.DataSource = lista;
+           
 
             //txtImporte.Text = (String)auxArticulo.Precio;
 
@@ -60,7 +68,7 @@ namespace WindowsFormsApp
             if (dgvBuscar.SelectedRows.Count ==1)
             {
                 string codigo = Convert.ToString(dgvBuscar.CurrentRow.Cells[1].Value);
-                articuloguardado = auxNegocio.buscar(codigo);
+                articuloguardado = auxNegocio.cargar(codigo);
                 frmDetalle detalle = new frmDetalle();
                 detalle.ShowDialog();
                 
