@@ -21,7 +21,7 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
-        public Articulos articuloguardado { get; set; }
+        public Articulos articuloguardado = new Articulos();
 
         private void btnBuscar_Click(object sender, EventArgs e) // SI PONES UN DATO QUE NO EXISTE PINCHA. 
         {
@@ -39,18 +39,13 @@ namespace WindowsFormsApp
                 auxArticulo = auxNegocio.cargar(txtBuscar.Text);
                 List<Articulos> lista = new List<Articulos>();
                 lista.Add(auxArticulo);
-                articuloguardado = auxArticulo;
+           
                 dgvBuscar.DataSource = lista;
             }
             else
             {
-                MessageBox.Show("El articulo codigo: "+txtBuscar+" no se encuentra en el catalogo.");
+                MessageBox.Show("El articulo codigo: "+txtBuscar.Text+" no se encuentra en el catalogo.");
             }
-
-
-           
-
-            //txtImporte.Text = (String)auxArticulo.Precio;
 
 
         }
@@ -67,9 +62,10 @@ namespace WindowsFormsApp
 
             if (dgvBuscar.SelectedRows.Count ==1)
             {
-                string codigo = Convert.ToString(dgvBuscar.CurrentRow.Cells[1].Value);
-                articuloguardado = auxNegocio.cargar(codigo);
-                frmDetalle detalle = new frmDetalle();
+                //string codigo = Convert.ToString(dgvBuscar.CurrentRow.Cells[1].Value);
+                
+                articuloguardado= auxNegocio.cargar(txtBuscar.Text);
+                frmDetalle detalle = new frmDetalle(articuloguardado);
                 detalle.ShowDialog();
                 
             }

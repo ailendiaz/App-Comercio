@@ -75,7 +75,6 @@
             this.btaceptar.TabIndex = 4;
             this.btaceptar.Text = "Aceptar";
             this.btaceptar.UseVisualStyleBackColor = true;
-            
             // 
             // frmDetalle
             // 
@@ -89,6 +88,7 @@
             this.Controls.Add(this.lbcodigo);
             this.Name = "frmDetalle";
             this.Text = "frmDetalle";
+            this.Load += new System.EventHandler(this.frmDetalle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

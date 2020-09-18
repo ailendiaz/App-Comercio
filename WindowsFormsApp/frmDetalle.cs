@@ -18,6 +18,18 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
-        
+        public frmDetalle(Articulos articulo)
+        {
+
+        }
+
+        private void frmDetalle_Load(object sender, EventArgs e)
+        {
+            frmBuscar buscar = new frmBuscar();
+            txtcodigo.Text = buscar.articuloguardado.Codigo;
+            txtnombre.Text = buscar.articuloguardado.Nombre;
+
+
+        }
     }
 }
