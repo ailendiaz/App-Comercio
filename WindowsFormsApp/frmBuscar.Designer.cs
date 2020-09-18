@@ -34,6 +34,7 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.btmodificar = new System.Windows.Forms.Button();
             this.txtdetalle = new System.Windows.Forms.Button();
+            this.bteliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             this.dgvBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvBuscar.Name = "dgvBuscar";
             this.dgvBuscar.RowHeadersWidth = 62;
-            this.dgvBuscar.Size = new System.Drawing.Size(655, 202);
+            this.dgvBuscar.Size = new System.Drawing.Size(683, 258);
             this.dgvBuscar.TabIndex = 2;
             // 
             // lblBuscar
@@ -100,11 +101,21 @@
             this.txtdetalle.UseVisualStyleBackColor = true;
             this.txtdetalle.Click += new System.EventHandler(this.txtdetalle_click);
             // 
+            // bteliminar
+            // 
+            this.bteliminar.Location = new System.Drawing.Point(77, 375);
+            this.bteliminar.Name = "bteliminar";
+            this.bteliminar.Size = new System.Drawing.Size(112, 36);
+            this.bteliminar.TabIndex = 6;
+            this.bteliminar.Text = "Eliminar";
+            this.bteliminar.UseVisualStyleBackColor = true;
+            // 
             // frmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 390);
+            this.ClientSize = new System.Drawing.Size(1023, 446);
+            this.Controls.Add(this.bteliminar);
             this.Controls.Add(this.txtdetalle);
             this.Controls.Add(this.btmodificar);
             this.Controls.Add(this.lblBuscar);
@@ -128,5 +139,6 @@
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.Button btmodificar;
         private System.Windows.Forms.Button txtdetalle;
+        private System.Windows.Forms.Button bteliminar;
     }
 }

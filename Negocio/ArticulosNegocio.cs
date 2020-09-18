@@ -143,7 +143,7 @@ namespace Negocio
                    //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
                    conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
                    comando.CommandType = System.Data.CommandType.Text;
-                   comando.CommandText = "Update ARTICULOS SET Codigo= '" + nuevo.Codigo + "',Nombre='" + nuevo.Nombre + "',Descrpcion= '" + nuevo.Descripcion + "',ImagenUrl='" + nuevo.ImagenUrl + "',Precio='" + nuevo.Precio + "', where Codigo='" + nuevo.Codigo + "'";
+                   comando.CommandText = "Update ARTICULOS SET Codigo= '" + nuevo.Codigo + "',Nombre='" + nuevo.Nombre + "',Descrpcion= '" + nuevo.Descripcion + "',ImagenUrl='" + nuevo.ImagenUrl +"'IDmarca='" +nuevo.marca.ID+"'IDcategoria'"+nuevo.categoria.ID+"',Precio='" + nuevo.Precio + "', where Codigo='" + nuevo.Codigo + "'";
 
                    comando.Connection = conexion;
 

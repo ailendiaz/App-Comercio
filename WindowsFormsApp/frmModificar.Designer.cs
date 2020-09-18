@@ -121,12 +121,13 @@
             // 
             // btcancelar
             // 
-            this.btcancelar.Location = new System.Drawing.Point(279, 445);
+            this.btcancelar.Location = new System.Drawing.Point(279, 441);
             this.btcancelar.Name = "btcancelar";
-            this.btcancelar.Size = new System.Drawing.Size(87, 31);
+            this.btcancelar.Size = new System.Drawing.Size(87, 35);
             this.btcancelar.TabIndex = 8;
             this.btcancelar.Text = "Cancelar";
             this.btcancelar.UseVisualStyleBackColor = true;
+           
             // 
             // txtcodigo
             // 
