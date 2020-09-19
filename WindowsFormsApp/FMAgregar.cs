@@ -45,13 +45,13 @@ namespace WindowsFormsApp
             ArticulosNegocio negocio = new ArticulosNegocio();
             if (articulo == null)
                 articulo = new Articulos();
-
+            
             articulo.Codigo = txtcodigo.Text;
             articulo.Nombre = txtnombre.Text;
             articulo.Descripcion = txtdescripcion.Text;
             articulo.ImagenUrl = txtimagen.Text;
             articulo.marca = (Marca)cbmarca.SelectedItem;
-            articulo.categoria = (Categoria)cbmarca.SelectedItem;
+            articulo.categoria = (Categoria)cbcategoria.SelectedItem;
 
             if (articulo.Id == 0)
                 negocio.Agregar(articulo);

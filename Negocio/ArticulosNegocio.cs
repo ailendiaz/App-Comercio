@@ -23,8 +23,8 @@ namespace Negocio
            //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Select A.ID,A.Codigo,A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion Marcas From ARTICULOS A, MARCAS M where A.IdMarca= M.Id";
-            comando.CommandText = "Select A.ID,A.Codigo,A.Nombre,A.Descripcion,A.ImagenUrl,A.Precio, m.Descripcion Marcas, isnull(c.Descripcion,'Sin definir') Categoria from ARTICULOS A left join MARCAS m on m.Id=a.IdMarca left join CATEGORIAS c on c.Id=a.IdCategoria";
+           // comando.CommandText = "Select A.ID,A.Codigo,A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, M.Descripcion Marcas From ARTICULOS A, MARCAS M where A.IdMarca= M.Id";
+            comando.CommandText = "Select A.ID,A.Codigo,A.Nombre,A.Descripcion,A.ImagenUrl,A.Precio,m.Id idmarca, m.Descripcion Marcas, isnull(c.Descripcion,'Sin definir') Categoria from ARTICULOS A left join MARCAS m on m.Id=a.IdMarca left join CATEGORIAS c on c.Id=a.IdCategoria";
 
             comando.Connection = conexion;
 
@@ -34,6 +34,7 @@ namespace Negocio
             while (lector.Read())
             {
                 Articulos aux = new Articulos();
+                aux.Id = (int)lector["ID"];
                 aux.Codigo = lector.GetString(1);
                 aux.Nombre = lector.GetString(2);
                 aux.Descripcion = lector.GetString(3);
@@ -41,8 +42,10 @@ namespace Negocio
                 aux.Precio = lector.GetSqlMoney(5);
 
                 aux.marca = new Marca();
+                aux.marca.ID = (int)lector["IdMarca"];
                 aux.marca.descripcion = (string)lector["Marcas"];
                 aux.categoria = new Categoria();
+                //aux.categoria.ID = (int)lector["IdCategoria"];
                 aux.categoria.descripcion = (string)lector["Categoria"];
 
                 lista.Add(aux);
@@ -55,18 +58,36 @@ namespace Negocio
 
         public void Agregar(Articulos nuevo)
         {
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
+
+            AccesoDatos conexion = new AccesoDatos();
+            try
+            {
+                conexion.setearQuery("Insert into ARTICULOS Codigo=@Codigo, Nombre= @nombre, Descripcion= @Descripcion,Imagen=@ImagenUrl, Precio= @Precio, IdMarca=@IdMarca, IdCategoria=@IdCategoria where Id=@Id");
+                conexion.agregarParametro("@Codigo", nuevo.Codigo);
+                conexion.agregarParametro("@Nombre", nuevo.Nombre);
+                conexion.agregarParametro("@Descripcion", nuevo.Descripcion);
+                conexion.agregarParametro("@Precio", nuevo.Precio);
+                conexion.agregarParametro("@IdMarca", nuevo.marca.ID);
+                conexion.agregarParametro("@IdCategoria", nuevo.categoria.ID);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            //SqlConnection conexion = new SqlConnection();
+            //SqlCommand comando = new SqlCommand();
 
             //comentamos y descomentamos para poder usar la base de datos local de cada uno
             //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
-            conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Insert Into ARTICULOS (Codigo,Nombre,Descripcion,ImagenUrl,Precio) values ('" + nuevo.Codigo + "','" + nuevo.Nombre + "','" + nuevo.Descripcion + "',' ',"+ nuevo.Precio +")";
-            comando.Connection = conexion;
+           // conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
+            //comando.CommandType = System.Data.CommandType.Text;
+            //comando.CommandText = "Insert Into ARTICULOS (Codigo,Nombre,Descripcion,ImagenUrl,Precio) values ('" + nuevo.Codigo + "','" + nuevo.Nombre + "','" + nuevo.Descripcion + "',' ',"+ nuevo.Precio +")";
+            //comando.Connection = conexion;
 
-            conexion.Open();
-            comando.ExecuteNonQuery();
+            //conexion.Open();
+            //comando.ExecuteNonQuery();
         }
 
         public bool buscar(string codigo)
@@ -131,26 +152,27 @@ namespace Negocio
 
         }
 
-        public Articulos modificar (Articulos nuevo)
+        public void modificar (Articulos nuevo)
         {
+            AccesoDatos conexion = new AccesoDatos();
+            try
+            {
+                conexion.setearQuery("Update ARTICULOS set Codigo=@Codigo, Nombre= @nombre, Descripcion= @Descripcion,Imagen=@ImagenUrl, Precio= @Precio, IdMarca=@IdMarca, IdCategoria=@IdCategoria where Id=@Id");
+                conexion.agregarParametro("@Codigo",nuevo.Codigo);
+                conexion.agregarParametro("@Nombre", nuevo.Nombre);
+                conexion.agregarParametro("@Descripcion", nuevo.Descripcion);
+                conexion.agregarParametro("@Precio", nuevo.Precio);
+                conexion.agregarParametro("@IdMarca", nuevo.marca.ID);
+                conexion.agregarParametro("@IdCategoria", nuevo.categoria.ID);
+                conexion.ejecutarAccion();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }     
             
-                   SqlConnection conexion = new SqlConnection();
-                   SqlCommand comando = new SqlCommand();
-                   
-
-            //comentamos y descomentamos para poder usar la base de datos local de cada uno
-                   //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
-                  conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
-                   comando.CommandType = System.Data.CommandType.Text;
-                   comando.CommandText = "Update ARTICULOS SET Codigo= '" + nuevo.Codigo + "',Nombre='" + nuevo.Nombre + "',Descrpcion= '" + nuevo.Descripcion + "',ImagenUrl='" + nuevo.ImagenUrl +"'IDmarca='" +nuevo.marca.ID+"'IDcategoria'"+nuevo.categoria.ID+"',Precio='" + nuevo.Precio + "', where Codigo='" + nuevo.Codigo + "'";
-
-                   comando.Connection = conexion;
-
-                   conexion.Open();
-                   comando.ExecuteNonQuery();
-
-
-            return nuevo;
 
         }
 
