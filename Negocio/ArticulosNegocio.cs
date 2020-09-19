@@ -167,10 +167,10 @@ namespace Negocio
                 conexion.ejecutarAccion();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }     
             
 
