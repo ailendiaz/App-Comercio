@@ -16,9 +16,16 @@ namespace WindowsFormsApp
 {
     public partial class frmBuscar : Form
     {
+        private Articulos articulo = null;
+
         public frmBuscar()
         {
             InitializeComponent();
+        }
+        public frmBuscar(Articulos art)
+        {
+            InitializeComponent();
+            articulo = art;
         }
 
         public Articulos articuloguardado = new Articulos();
@@ -82,5 +89,22 @@ namespace WindowsFormsApp
             frmModificar modificar = new frmModificar();
             modificar.ShowDialog();
         }
+
+        private void bteliminar_Click(object sender, EventArgs e)
+        {
+            ArticulosNegocio auxNegocio = new ArticulosNegocio();
+            Articulos auxArticulo = (Articulos)dgvBuscar.CurrentRow.DataBoundItem;
+
+           
+                if (auxNegocio.eliminar(auxArticulo.Codigo))
+                {
+                    MessageBox.Show("El articulo codigo: " + auxArticulo.Codigo + " se ha eliminado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se ha podido establecer la conexion con el servidor");
+                }
+        }
+
     }
 }
