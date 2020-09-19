@@ -27,6 +27,8 @@ namespace WindowsFormsApp
           articulo = art;
        }
 
+        
+
         private void btaceptar_Click(object sender, EventArgs e)
         {
             //Articulos nuevo = new Articulos();
@@ -50,7 +52,7 @@ namespace WindowsFormsApp
             articulo.Nombre = txtnombre.Text;
             articulo.Descripcion = txtdescripcion.Text;
             articulo.ImagenUrl = txtimagen.Text;
-            articulo.marca = (Marca)cbmarca.SelectedItem;
+            articulo.marca= (Marca)cbmarca.SelectedItem;
             articulo.categoria = (Categoria)cbcategoria.SelectedItem;
 
             if (articulo.Id == 0)

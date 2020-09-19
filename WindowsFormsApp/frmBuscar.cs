@@ -23,13 +23,19 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
         //public frmBuscar(Articulos art)
-       // {
-         //   InitializeComponent();
+        // {
+        //   InitializeComponent();
         //    articulo = art;
-       // }
+        // }
 
-        public Articulos articuloguardado = new Articulos();
+        //public Articulos articuloguardado = new Articulos();
+        private void cargar()
+        {
+            ArticulosNegocio negocio = new ArticulosNegocio();
+            dgvBuscar.DataSource = negocio.listar();
+            dgvBuscar.Columns[2].Visible = false;
 
+        }
         private void btnBuscar_Click(object sender, EventArgs e) // SI PONES UN DATO QUE NO EXISTE PINCHA. 
         {
             //Elimine el codigo de prueba
@@ -71,9 +77,9 @@ namespace WindowsFormsApp
             {
                 //string codigo = Convert.ToString(dgvBuscar.CurrentRow.Cells[1].Value);
                 
-                articuloguardado= auxNegocio.cargar(txtBuscar.Text);
-                frmDetalle detalle = new frmDetalle(articuloguardado);
-                detalle.ShowDialog();
+                //articuloguardado= auxNegocio.cargar(txtBuscar.Text);
+                //FMAgregar agregar = new FMAgregar(auxArticulo);
+                //agregar.ShowDialog();
                 
             }
             else
@@ -91,7 +97,7 @@ namespace WindowsFormsApp
 
             FMAgregar modificar = new FMAgregar(art); //REUTILIZO EL FM AGREGAR PARA MODIFICAR
             modificar.ShowDialog();
-            //cargar();// VERIFICAR
+            cargar();// VERIFICAR
         }
 
         private void bteliminar_Click(object sender, EventArgs e)
