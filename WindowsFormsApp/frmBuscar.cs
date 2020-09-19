@@ -16,17 +16,17 @@ namespace WindowsFormsApp
 {
     public partial class frmBuscar : Form
     {
-        private Articulos articulo = null;
+        //private Articulos articulo = null; COMENTE LAS LINEAS PORQUE VAN EN EL FORM AGREGAR
 
         public frmBuscar()
         {
             InitializeComponent();
         }
-        public frmBuscar(Articulos art)
-        {
-            InitializeComponent();
-            articulo = art;
-        }
+        //public frmBuscar(Articulos art)
+       // {
+         //   InitializeComponent();
+        //    articulo = art;
+       // }
 
         public Articulos articuloguardado = new Articulos();
 
@@ -86,8 +86,12 @@ namespace WindowsFormsApp
 
         private void btmodificar_Click(object sender, EventArgs e)
         {
-            frmModificar modificar = new frmModificar();
+            Articulos art;
+            art = (Articulos)dgvBuscar.CurrentRow.DataBoundItem;
+
+            FMAgregar modificar = new FMAgregar(art); //REUTILIZO EL FM AGREGAR PARA MODIFICAR
             modificar.ShowDialog();
+            //cargar();// VERIFICAR
         }
 
         private void bteliminar_Click(object sender, EventArgs e)

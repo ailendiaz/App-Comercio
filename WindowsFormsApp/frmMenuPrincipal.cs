@@ -31,11 +31,7 @@ namespace WindowsFormsApp
             agregar.ShowDialog(); 
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-          frmModificar modificar= new frmModificar();
-          modificar.ShowDialog();
-        }
+       
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {

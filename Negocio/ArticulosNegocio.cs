@@ -62,7 +62,7 @@ namespace Negocio
             //conexion.ConnectionString = "Data Source= ALE\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Insert Into ARTICULOS (Codigo,Nombre,Descripcion,ImagenUrl,Precio) values ('" + nuevo.Codigo + "','" + nuevo.Nombre + "','" + nuevo.Descripcion + "',' ','" + nuevo.Precio + "')";
+            comando.CommandText = "Insert Into ARTICULOS (Codigo,Nombre,Descripcion,ImagenUrl,Precio) values ('" + nuevo.Codigo + "','" + nuevo.Nombre + "','" + nuevo.Descripcion + "',' ',"+ nuevo.Precio +")";
             comando.Connection = conexion;
 
             conexion.Open();
@@ -108,10 +108,11 @@ namespace Negocio
             conexion.Open();
             lector = comando.ExecuteReader();
 
-            
+
             Articulos aux = new Articulos();
             while (lector.Read())
             {
+               
                 aux.Codigo = lector.GetString(1);
 
                 aux.Nombre = lector.GetString(2);
@@ -130,11 +131,9 @@ namespace Negocio
 
         }
 
-        public static int modificar (Articulos nuevo)
+        public Articulos modificar (Articulos nuevo)
         {
-            int retorno = 0;
-
-            {
+            
                    SqlConnection conexion = new SqlConnection();
                    SqlCommand comando = new SqlCommand();
                    
@@ -148,10 +147,10 @@ namespace Negocio
                    comando.Connection = conexion;
 
                    conexion.Open();
-                 retorno = comando.ExecuteNonQuery();
-              }
+                   comando.ExecuteNonQuery();
 
-              return retorno;
+
+            return nuevo;
 
         }
 
