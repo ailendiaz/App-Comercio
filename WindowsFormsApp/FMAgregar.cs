@@ -94,6 +94,8 @@ namespace WindowsFormsApp
                 txtdescripcion.Text = articulo.Descripcion;
                 txtimagen.Text = articulo.ImagenUrl;
                 //txtprecio.Text = articulo.Precio;
+                cbmarca.SelectedValue = articulo.marca.ID;
+                cbcategoria.SelectedValue = articulo.categoria.ID;
                 Text = "Formulario de modificacion";
             }
 

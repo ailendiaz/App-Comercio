@@ -71,10 +71,10 @@ namespace Negocio
                 conexion.agregarParametro("@IdCategoria", nuevo.categoria.ID);
                 conexion.ejecutarAccion();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             //SqlConnection conexion = new SqlConnection();
             //SqlCommand comando = new SqlCommand();
