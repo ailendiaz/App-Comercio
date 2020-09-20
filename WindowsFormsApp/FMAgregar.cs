@@ -116,5 +116,10 @@ namespace WindowsFormsApp
             //    e.Handled = true;
             //}
         }
+
+        private void btcancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

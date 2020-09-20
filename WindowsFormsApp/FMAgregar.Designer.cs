@@ -186,6 +186,7 @@
             this.btcancelar.TabIndex = 15;
             this.btcancelar.Text = "Cancelar";
             this.btcancelar.UseVisualStyleBackColor = false;
+            this.btcancelar.Click += new System.EventHandler(this.btcancelar_Click);
             // 
             // FMAgregar
             // 
