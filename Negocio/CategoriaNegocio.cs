@@ -18,10 +18,10 @@ namespace Negocio
             SqlConnection conexion = new SqlConnection();
 
             //comentamos y descomentamos para poder usar la base de datos local de cada uno
-            //conexion.ConnectionString= "data source=ALE\\SQLEXPRESS; initial catalog = CATALOGO_DB; integrated security = sspi";
-            conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
+            conexion.ConnectionString= "data source=ALE\\SQLEXPRESS; initial catalog = CATALOGO_DB; integrated security = sspi";
+            //conexion.ConnectionString = "Data Source= DESKTOP-3EDAK3V\\SQLEXPRESS; initial catalog= CATALOGO_DB;integrated security= sspi";
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "select Descripcion from CATEGORIAS";
+            comando.CommandText = "select * from CATEGORIAS";
             comando.Connection = conexion;
 
             conexion.Open();
@@ -29,7 +29,7 @@ namespace Negocio
 
             while (lector.Read())
             {
-                lista.Add(new Categoria ((string)lector["Descripcion"]));
+                lista.Add(new Categoria ((int)lector["id"],(string)lector["Descripcion"]));
 
             }
             lector.Close();

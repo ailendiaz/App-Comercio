@@ -11,8 +11,9 @@ namespace Dominio
         public int ID { get; set; }
         public string descripcion { get; set; }
 
-        public Categoria( string descripcion)
+        public Categoria( int IDCategoria,string descripcion)
         {
+            this.ID = IDCategoria;
             this.descripcion = descripcion;
         }
         public Categoria() { }

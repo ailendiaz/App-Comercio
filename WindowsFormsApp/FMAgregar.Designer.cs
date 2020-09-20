@@ -120,7 +120,7 @@
             // 
             this.txtcodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtcodigo.Location = new System.Drawing.Point(164, 32);
-            this.txtcodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtcodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(121, 20);
             this.txtcodigo.TabIndex = 7;
@@ -128,7 +128,7 @@
             // txtnombre
             // 
             this.txtnombre.Location = new System.Drawing.Point(164, 60);
-            this.txtnombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(121, 20);
             this.txtnombre.TabIndex = 8;
@@ -136,7 +136,7 @@
             // txtdescripcion
             // 
             this.txtdescripcion.Location = new System.Drawing.Point(164, 88);
-            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(121, 20);
             this.txtdescripcion.TabIndex = 9;
@@ -144,7 +144,7 @@
             // txtimagen
             // 
             this.txtimagen.Location = new System.Drawing.Point(164, 182);
-            this.txtimagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtimagen.Margin = new System.Windows.Forms.Padding(2);
             this.txtimagen.Name = "txtimagen";
             this.txtimagen.Size = new System.Drawing.Size(121, 20);
             this.txtimagen.TabIndex = 10;
@@ -152,16 +152,17 @@
             // txtprecio
             // 
             this.txtprecio.Location = new System.Drawing.Point(164, 222);
-            this.txtprecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtprecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(121, 20);
             this.txtprecio.TabIndex = 11;
+            this.txtprecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprecio_KeyPress);
             // 
             // cbmarca
             // 
             this.cbmarca.FormattingEnabled = true;
             this.cbmarca.Location = new System.Drawing.Point(164, 118);
-            this.cbmarca.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbmarca.Margin = new System.Windows.Forms.Padding(2);
             this.cbmarca.Name = "cbmarca";
             this.cbmarca.Size = new System.Drawing.Size(121, 21);
             this.cbmarca.TabIndex = 12;
@@ -170,7 +171,7 @@
             // 
             this.cbcategoria.FormattingEnabled = true;
             this.cbcategoria.Location = new System.Drawing.Point(164, 149);
-            this.cbcategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbcategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cbcategoria.Name = "cbcategoria";
             this.cbcategoria.Size = new System.Drawing.Size(121, 21);
             this.cbcategoria.TabIndex = 13;
@@ -178,7 +179,7 @@
             // btaceptar
             // 
             this.btaceptar.Location = new System.Drawing.Point(93, 269);
-            this.btaceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btaceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btaceptar.Name = "btaceptar";
             this.btaceptar.Size = new System.Drawing.Size(57, 25);
             this.btaceptar.TabIndex = 14;
@@ -189,7 +190,7 @@
             // btcancelar
             // 
             this.btcancelar.Location = new System.Drawing.Point(197, 269);
-            this.btcancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btcancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btcancelar.Name = "btcancelar";
             this.btcancelar.Size = new System.Drawing.Size(57, 25);
             this.btcancelar.TabIndex = 15;
@@ -217,7 +218,7 @@
             this.Controls.Add(this.lbdescripcion);
             this.Controls.Add(this.lbNombre);
             this.Controls.Add(this.lbCodigoArt);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FMAgregar";
             this.Text = "FMAgregar";
             this.Load += new System.EventHandler(this.FMAgregar_Load);

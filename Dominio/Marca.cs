@@ -12,8 +12,9 @@ namespace Dominio
         public string descripcion { get; set; }
 
         public Marca() { }
-        public Marca(string descripcion)
+        public Marca(int IDMarca, string descripcion)
         {
+            this.ID = IDMarca;
             this.descripcion = descripcion;
         }
 

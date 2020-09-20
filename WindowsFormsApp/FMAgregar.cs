@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using System.Data.SqlTypes;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp
 {
@@ -54,6 +56,7 @@ namespace WindowsFormsApp
             articulo.ImagenUrl = txtimagen.Text;
             articulo.marca= (Marca)cbmarca.SelectedItem;
             articulo.categoria = (Categoria)cbcategoria.SelectedItem;
+            articulo.Precio = Convert.ToDecimal(txtprecio.Text);
 
             if (articulo.Id == 0)
                 negocio.Agregar(articulo);
@@ -91,16 +94,27 @@ namespace WindowsFormsApp
 
             if (articulo !=null)
             {
+                SqlCommand comando = new SqlCommand();
+                
                 txtcodigo.Text = articulo.Codigo;
                 txtnombre.Text = articulo.Nombre;
                 txtdescripcion.Text = articulo.Descripcion;
                 txtimagen.Text = articulo.ImagenUrl;
-                //txtprecio.Text = articulo.Precio;
+               
+                txtprecio.Text = Convert.ToString(articulo.Precio);
                 cbmarca.SelectedValue = articulo.marca.ID;
                 cbcategoria.SelectedValue = articulo.categoria.ID;
                 Text = "Formulario de modificacion";
             }
 
+        }
+
+        private void txtprecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if((e.KeyChar <48 || e.KeyChar>57||e.KeyChar==46)&& e.KeyChar != 8)
+            //{
+            //    e.Handled = true;
+            //}
         }
     }
 }
