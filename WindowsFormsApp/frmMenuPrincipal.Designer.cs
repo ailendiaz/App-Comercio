@@ -30,7 +30,6 @@
         {
             this.btnListado = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,17 +55,6 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnModificar
-            // 
-            this.btnModificar.Location = new System.Drawing.Point(698, 255);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(344, 35);
-            this.btnModificar.TabIndex = 2;
-            this.btnModificar.Text = "Modificar Articulo";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(698, 131);
@@ -84,7 +72,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 440);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnListado);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -98,7 +85,6 @@
 
         private System.Windows.Forms.Button btnListado;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBuscar;
     }
 }

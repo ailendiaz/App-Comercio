@@ -154,7 +154,7 @@ namespace Negocio
             return aux;
 
         }
-
+        
         public void modificar (Articulos nuevo)
         {
             AccesoDatos conexion = new AccesoDatos();
